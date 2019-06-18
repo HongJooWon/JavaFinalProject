@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 import edu.handong.csee.function.Exceptions;
 
-public class Merge {
+public class Merge extends Thread{
 
     /**public static void main(String[] args) {
 
@@ -34,7 +34,14 @@ public class Merge {
 	public void run(String[] args) {
 		
 		try {
-			// when there are not enough arguments from CLI, it throws the NotEnoughArgmentException which must be defined by you.
+			Thread.sleep(1000);
+				
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
+			// TODO: handle exception
+		}
+		
+		try {
 			if(args.length<2)
 				throw new Exceptions();
 		} catch (Exceptions e) {
